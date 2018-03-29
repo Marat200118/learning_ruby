@@ -48,10 +48,10 @@ when "delete"
   puts "What movie you want to delete?"
   title = gets.chomp
 if movies[title.to_sym].nil?
-    puts "Movie not found!"
+  puts "Movie not found!"
 else
-    movies.delete(title.to_sym)
-    puts "#{title} has been removed."
+  movies.delete(title.to_sym)
+  puts "#{title} has been removed."
 end
 
 else
