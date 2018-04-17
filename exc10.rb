@@ -14,10 +14,9 @@ puts "-- Type 'exit' to quit program."
 
 choice = gets.chomp
 
-
-  def add_movie(movies)
-    puts "What movie would you like to add? "
-    title = gets.chomp.to_sym
+def add_movie(movies)
+  puts "What movie would you like to add? "
+  title = gets.chomp.to_sym
   if movies[title.to_sym].nil?
     puts "What's the rating? (type a number 0 to 4)"
     rating = gets.chomp
@@ -28,10 +27,9 @@ choice = gets.chomp
   end
 end
 
-
-  def update_movie(movies)
-    puts "What movie do you want to update?"
-    title = gets.chomp
+def update_movie(movies)
+  puts "What movie do you want to update?"
+  title = gets.chomp
   if movies[title.to_sym].nil?
     puts "Movie not found!"
   else
@@ -42,35 +40,31 @@ end
   end
 end
 
-
-  def display_movies(movies)
-    movies.each do |movie, rating|
+def display_movies(movies)
+  movies.each do |movie, rating|
     puts "#{movie}: #{rating}"
   end
 end
 
-
 def delete_movie(movies)
   puts "What movie you want to delete?"
   title = gets.chomp
-if movies[title.to_sym].nil?
-  puts "Movie not found!"
-else
-  movies.delete(title.to_sym)
-  puts "#{title} has been removed."
- end
+  if movies[title.to_sym].nil?
+    puts "Movie not found!"
+  else
+    movies.delete(title.to_sym)
+    puts "#{title} has been removed."
+  end
 end
-
 
 def exit_script(movies)
   Process.exit!
 end
 
-
 case choice
- when "add" then add_movie(movies)
- when "update" then update_movie(movies)
- when "display" then display_movies(movies)
- when "delete" then delete_movie(movies)
- when "exit" then exit_script(movies)
+when "add" then add_movie(movies)
+when "update" then update_movie(movies)
+when "display" then display_movies(movies)
+when "delete" then delete_movie(movies)
+when "exit" then exit_script(movies)
 end
